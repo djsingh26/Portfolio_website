@@ -34,6 +34,10 @@ export function Experience() {
                         <img
                           src={item.logo}
                           alt={`${item.company} logo`}
+                          loading="lazy"
+                          decoding="async"
+                          width={24}
+                          height={24}
                           className="h-6 w-6 object-contain"
                         />
                       ) : (

@@ -1,8 +1,10 @@
 import { ArrowRight, Download, Send } from "lucide-react";
 import { Button } from "../components/ui/Button";
 import { Reveal } from "../components/ui/Reveal";
-import { ParticleField } from "../components/visuals/ParticleField";
+import React, { Suspense, lazy } from "react";
 import { ProfilePicture } from "../components/ui/ProfilePicture";
+
+const ParticleField = lazy(() => import("../components/visuals/ParticleField").then((mod) => ({ default: mod.ParticleField })));
 
 export function Hero() {
   return (
@@ -58,8 +60,10 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={140}>
-          <div className="relative mx-auto aspect-square w-full max-w-[520px] overflow-hidden rounded-lg border border-ink-950/10 bg-white/80 shadow-soft dark:border-white/10 dark:bg-white/10">
-            <ParticleField />
+            <div className="relative mx-auto aspect-square w-full max-w-[520px] overflow-hidden rounded-lg border border-ink-950/10 bg-white/80 shadow-soft dark:border-white/10 dark:bg-white/10">
+            <Suspense fallback={<div className="h-full w-full" aria-hidden="true" /> }>
+              <ParticleField />
+            </Suspense>
             <div className="absolute inset-8 rounded-lg border border-brand-600/20" />
             <div className="absolute left-8 top-8 h-16 w-16 rounded-lg border border-ember-500/40 bg-ember-400/15 animate-float" />
             <div className="absolute bottom-8 right-8 h-24 w-24 rounded-lg border border-brand-600/40 bg-brand-500/15 animate-pulseRing" />

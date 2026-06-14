@@ -65,7 +65,11 @@ export function ProfilePicture({
             <img
               src={src}
               alt={alt}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+              width={px}
+              height={px}
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center text-xl font-semibold text-ink-500 dark:text-stone-300">
