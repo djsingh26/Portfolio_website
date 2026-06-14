@@ -4,7 +4,11 @@ import { Reveal } from "../components/ui/Reveal";
 import React, { Suspense, lazy } from "react";
 import { ProfilePicture } from "../components/ui/ProfilePicture";
 
-const ParticleField = lazy(() => import("../components/visuals/ParticleField").then((mod) => ({ default: mod.ParticleField })));
+const ParticleField = lazy(() =>
+  import("../components/visuals/ParticleField").then((mod) => ({
+    default: mod.ParticleField,
+  })),
+);
 
 export function Hero() {
   return (
@@ -60,8 +64,10 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={140}>
-            <div className="relative mx-auto aspect-square w-full max-w-[520px] overflow-hidden rounded-lg border border-ink-950/10 bg-white/80 shadow-soft dark:border-white/10 dark:bg-white/10">
-            <Suspense fallback={<div className="h-full w-full" aria-hidden="true" /> }>
+          <div className="relative mx-auto aspect-square w-full max-w-[520px] overflow-hidden rounded-lg border border-ink-950/10 bg-white/80 shadow-soft dark:border-white/10 dark:bg-white/10">
+            <Suspense
+              fallback={<div className="h-full w-full" aria-hidden="true" />}
+            >
               <ParticleField />
             </Suspense>
             <div className="absolute inset-8 rounded-lg border border-brand-600/20" />
