@@ -80,6 +80,7 @@ export const timeline: TimelineItem[] = [
     date: 'December 2025 - Present',
     company: 'Steampunk Inc.',
     role: 'Salesforce Application Developer',
+    logo: '../public/steampunk_inc_logo_big.jpg',
     achievements: [
       'Built responsive client sites with React, TypeScript, and Tailwind CSS.',
       'Improved Lighthouse accessibility scores through semantic markup and focus handling.',
@@ -90,6 +91,7 @@ export const timeline: TimelineItem[] = [
     date: 'March 2023 - December 2024',
     company: 'Freddie Mac',
     role: 'Salesforce II Engineer',
+    logo: '../public/freddie_mac_logo.jpg',
     achievements: [
       'Shipped dashboard features used by operations and support teams.',
       'Integrated API workflows with resilient loading, error, and empty states.',
@@ -100,6 +102,7 @@ export const timeline: TimelineItem[] = [
     date: 'July 2022 - March 2023',
     company: 'Freddie Mac',
     role: 'Salesforce I Engineer',
+    logo: './public/freddie_mac_logo.jpg',
     achievements: [
       'Focused on human-computer interaction, web architecture, and software design.',
       'Led student projects involving real users, rapid prototyping, and usability testing.',
@@ -109,6 +112,7 @@ export const timeline: TimelineItem[] = [
     date: 'March 2021 - August 2021',
     company: 'Freddie Mac',
     role: 'Software Engineer - Intern',
+    logo: '/public/bana_solutions_llc_logo.jpg',
     achievements: [
       'Focused on human-computer interaction, web architecture, and software design.',
       'Led student projects involving real users, rapid prototyping, and usability testing.',

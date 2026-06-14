@@ -22,7 +22,12 @@ export function Experience() {
                 <article className={`relative grid gap-5 md:grid-cols-2 ${index % 2 === 0 ? '' : 'md:[&>*:first-child]:col-start-2'}`}>
                   <div className="pl-14 md:px-8">
                     <div className="absolute left-0 top-1 flex h-10 w-10 items-center justify-center rounded-lg border border-brand-600/30 bg-white text-brand-700 shadow-soft md:left-1/2 md:-translate-x-1/2 dark:border-brand-100/25 dark:bg-ink-900 dark:text-brand-100">
-                      <BriefcaseBusiness size={18} aria-hidden="true" />
+                      {item.logo ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img src={item.logo} alt={`${item.company} logo`} className="h-6 w-6 object-contain" />
+                      ) : (
+                        <BriefcaseBusiness size={18} aria-hidden="true" />
+                      )}
                     </div>
                     <div className="rounded-lg border border-ink-950/10 bg-white p-6 shadow-soft dark:border-white/10 dark:bg-white/10">
                       <p className="text-sm font-semibold text-brand-700 dark:text-brand-100">{item.date}</p>

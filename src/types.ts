@@ -29,6 +29,7 @@ export type TimelineItem = {
   company: string;
   role: string;
   achievements: string[];
+  logo?: string;
 };
 
 export type Certification = {
