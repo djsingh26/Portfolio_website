@@ -1,11 +1,12 @@
 import { Github, Linkedin, Mail } from 'lucide-react';
-import type { NavItem, Project, SkillGroup, SocialLink, TimelineItem } from '../types';
+import type { Certification, NavItem, Project, SkillGroup, SocialLink, TimelineItem } from '../types';
 
 export const navItems: NavItem[] = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
   { id: 'projects', label: 'Projects' },
   { id: 'experience', label: 'Experience' },
+  { id: 'certifications', label: 'Certifications' },
   { id: 'contact', label: 'Contact' },
 ];
 
@@ -76,9 +77,10 @@ export const projects: Project[] = [
 
 export const timeline: TimelineItem[] = [
   {
-    date: '2024 - Present',
-    company: 'Freelance Studio',
-    role: 'Frontend Developer',
+    date: 'December 2025 - Present',
+    company: 'Steampunk Inc.',
+    role: 'Salesforce Application Developer',
+    logo: '../public/steampunk_inc_logo_big.jpg',
     achievements: [
       'Built responsive client sites with React, TypeScript, and Tailwind CSS.',
       'Improved Lighthouse accessibility scores through semantic markup and focus handling.',
@@ -86,9 +88,10 @@ export const timeline: TimelineItem[] = [
     ],
   },
   {
-    date: '2022 - 2024',
-    company: 'Northstar Labs',
-    role: 'Full-Stack Engineer',
+    date: 'March 2023 - December 2024',
+    company: 'Freddie Mac',
+    role: 'Salesforce II Engineer',
+    logo: '../public/freddie_mac_logo.jpg',
     achievements: [
       'Shipped dashboard features used by operations and support teams.',
       'Integrated API workflows with resilient loading, error, and empty states.',
@@ -96,9 +99,20 @@ export const timeline: TimelineItem[] = [
     ],
   },
   {
-    date: '2018 - 2022',
-    company: 'State University',
-    role: 'B.S. Computer Science',
+    date: 'July 2022 - March 2023',
+    company: 'Freddie Mac',
+    role: 'Salesforce I Engineer',
+    logo: './public/freddie_mac_logo.jpg',
+    achievements: [
+      'Focused on human-computer interaction, web architecture, and software design.',
+      'Led student projects involving real users, rapid prototyping, and usability testing.',
+    ],
+  },
+  {
+    date: 'March 2021 - August 2021',
+    company: 'Freddie Mac',
+    role: 'Software Engineer - Intern',
+    logo: '/public/bana_solutions_llc_logo.jpg',
     achievements: [
       'Focused on human-computer interaction, web architecture, and software design.',
       'Led student projects involving real users, rapid prototyping, and usability testing.',
@@ -106,8 +120,36 @@ export const timeline: TimelineItem[] = [
   },
 ];
 
+export const certifications: Certification[] = [
+  {
+    id: 1,
+    title: 'Salesforce Certified Platform Developer I',
+    issuer: 'Salesforce',
+    issued: 'June 14th 2025',
+    credentialId: 'Credential ID available on request',
+    credentialUrl: 'https://trailhead.salesforce.com/credentials/verification',
+    skills: ['Apex', 'Developer Fundamentals', 'Data Modeling', 'Process Automation', 'Testing', 'Debugging', 'Deployment', 'User Interface', 'Integration'],
+  },
+  {
+    id: 2,
+    title: 'Salesforce Certified Platform App Builder',
+    issuer: 'Salesforce',
+    issued: 'October 08th 2025',
+    credentialUrl: 'https://trailhead.salesforce.com/credentials/verification',
+    skills: ['Data Modeling', 'Salesforce Management', 'User Interface', 'App Development', 'Security', 'Business Logic', 'Process Automation', 'Mobile App Development'],
+  },
+  {
+    id: 3,
+    title: 'Salesforce Certified JavaScript Developer I',
+    issuer: 'Soon ...',
+    issued: 'Sometimes in 2026',
+    credentialUrl: 'https://www.freecodecamp.org/certification/',
+    skills: ['HTML', 'CSS', 'Accessibility', 'JavaScript Fundamentals', 'React', 'Testing', 'Performance Optimization', 'Security Best Practices', 'Build Tools', 'LWC Development'],
+  },
+];
+
 export const socialLinks: SocialLink[] = [
-  { label: 'GitHub', href: 'https://github.com/', icon: Github },
-  { label: 'LinkedIn', href: 'https://linkedin.com/', icon: Linkedin },
-  { label: 'Email', href: 'mailto:hello@example.com', icon: Mail },
+  { label: 'GitHub', href: 'https://github.com/djsingh26', icon: Github },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/dilraj-singh-professional//', icon: Linkedin },
+  { label: 'Email', href: 'mailto:dilraj3004@gmail.com', icon: Mail },
 ];

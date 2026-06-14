@@ -29,6 +29,17 @@ export type TimelineItem = {
   company: string;
   role: string;
   achievements: string[];
+  logo?: string;
+};
+
+export type Certification = {
+  id: number;
+  title: string;
+  issuer: string;
+  issued: string;
+  credentialId?: string;
+  credentialUrl: string;
+  skills: string[];
 };
 
 export type SocialLink = {

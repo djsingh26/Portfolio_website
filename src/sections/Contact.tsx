@@ -1,11 +1,11 @@
-import { CheckCircle2, Send, XCircle } from 'lucide-react';
-import { FormEvent, useMemo, useState } from 'react';
-import { Button } from '../components/ui/Button';
-import { Card } from '../components/ui/Card';
-import { Reveal } from '../components/ui/Reveal';
-import { SectionHeading } from '../components/ui/SectionHeading';
-import { TextArea, TextInput } from '../components/ui/TextField';
-import { socialLinks } from '../data/portfolio';
+import { CheckCircle2, Send, XCircle } from "lucide-react";
+import { FormEvent, useMemo, useState } from "react";
+import { Button } from "../components/ui/Button";
+import { Card } from "../components/ui/Card";
+import { Reveal } from "../components/ui/Reveal";
+import { SectionHeading } from "../components/ui/SectionHeading";
+import { TextArea, TextInput } from "../components/ui/TextField";
+import { socialLinks } from "../data/portfolio";
 
 type FormValues = {
   name: string;
@@ -15,13 +15,13 @@ type FormValues = {
 };
 
 type FormErrors = Partial<Record<keyof FormValues, string>>;
-type FormStatus = 'idle' | 'success' | 'error';
+type FormStatus = "idle" | "success" | "error";
 
 const initialValues: FormValues = {
-  name: '',
-  email: '',
-  subject: '',
-  message: '',
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
 };
 
 function validateForm(values: FormValues): FormErrors {
@@ -29,19 +29,19 @@ function validateForm(values: FormValues): FormErrors {
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (values.name.trim().length < 2) {
-    errors.name = 'Please enter your name.';
+    errors.name = "Please enter your name.";
   }
 
   if (!emailPattern.test(values.email)) {
-    errors.email = 'Please enter a valid email address.';
+    errors.email = "Please enter a valid email address.";
   }
 
   if (values.subject.trim().length < 4) {
-    errors.subject = 'Please add a short subject.';
+    errors.subject = "Please add a short subject.";
   }
 
   if (values.message.trim().length < 12) {
-    errors.message = 'Please write a message with at least 12 characters.';
+    errors.message = "Please write a message with at least 12 characters.";
   }
 
   return errors;
@@ -50,24 +50,24 @@ function validateForm(values: FormValues): FormErrors {
 export function Contact() {
   const [values, setValues] = useState<FormValues>(initialValues);
   const [errors, setErrors] = useState<FormErrors>({});
-  const [status, setStatus] = useState<FormStatus>('idle');
+  const [status, setStatus] = useState<FormStatus>("idle");
 
   const statusMessage = useMemo(() => {
-    if (status === 'success') {
-      return 'Thanks, your message is ready to send.';
+    if (status === "success") {
+      return "Thanks, your message is ready to send.";
     }
 
-    if (status === 'error') {
-      return 'Please fix the highlighted fields and try again.';
+    if (status === "error") {
+      return "Please fix the highlighted fields and try again.";
     }
 
-    return '';
+    return "";
   }, [status]);
 
   const updateValue = (field: keyof FormValues, value: string) => {
     setValues((current) => ({ ...current, [field]: value }));
     setErrors((current) => ({ ...current, [field]: undefined }));
-    setStatus('idle');
+    setStatus("idle");
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -76,16 +76,19 @@ export function Contact() {
     setErrors(nextErrors);
 
     if (Object.keys(nextErrors).length > 0) {
-      setStatus('error');
+      setStatus("error");
       return;
     }
 
-    setStatus('success');
+    setStatus("success");
     setValues(initialValues);
   };
 
   return (
-    <section id="contact" className="scroll-mt-24 bg-white px-4 py-20 sm:px-6 lg:px-8 dark:bg-ink-900">
+    <section
+      id="contact"
+      className="scroll-mt-24 bg-white px-4 py-20 sm:px-6 lg:px-8 dark:bg-ink-900"
+    >
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Contact"
@@ -97,9 +100,12 @@ export function Contact() {
           <Reveal>
             <div className="space-y-6">
               <div>
-                <h3 className="text-2xl font-bold text-ink-950 dark:text-white">Find me online</h3>
+                <h3 className="text-2xl font-bold text-ink-950 dark:text-white">
+                  Find me online
+                </h3>
                 <p className="mt-4 max-w-xl text-base leading-8 text-ink-950/70 dark:text-stone-300">
-                  I’m available for frontend engineering, product UI builds, and component system work.
+                  I’m available for Salesforce engineering, product UI builds,
+                  and component system work.
                 </p>
               </div>
 
@@ -108,8 +114,8 @@ export function Contact() {
                   <a
                     key={label}
                     href={href}
-                    target={href.startsWith('http') ? '_blank' : undefined}
-                    rel={href.startsWith('http') ? 'noreferrer' : undefined}
+                    target={href.startsWith("http") ? "_blank" : undefined}
+                    rel={href.startsWith("http") ? "noreferrer" : undefined}
                     className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-ink-950/15 px-4 py-2 text-sm font-semibold text-ink-950/75 transition hover:border-brand-600 hover:text-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 dark:border-white/15 dark:text-stone-300 dark:hover:border-brand-100 dark:hover:text-brand-100"
                   >
                     <Icon size={18} />
@@ -128,7 +134,9 @@ export function Contact() {
                     id="name"
                     label="Name"
                     value={values.name}
-                    onChange={(event) => updateValue('name', event.target.value)}
+                    onChange={(event) =>
+                      updateValue("name", event.target.value)
+                    }
                     error={errors.name}
                     autoComplete="name"
                     placeholder="Your name"
@@ -137,7 +145,9 @@ export function Contact() {
                     id="email"
                     label="Email"
                     value={values.email}
-                    onChange={(event) => updateValue('email', event.target.value)}
+                    onChange={(event) =>
+                      updateValue("email", event.target.value)
+                    }
                     error={errors.email}
                     autoComplete="email"
                     inputMode="email"
@@ -148,7 +158,9 @@ export function Contact() {
                   id="subject"
                   label="Subject"
                   value={values.subject}
-                  onChange={(event) => updateValue('subject', event.target.value)}
+                  onChange={(event) =>
+                    updateValue("subject", event.target.value)
+                  }
                   error={errors.subject}
                   placeholder="Project inquiry"
                 />
@@ -156,7 +168,9 @@ export function Contact() {
                   id="message"
                   label="Message"
                   value={values.message}
-                  onChange={(event) => updateValue('message', event.target.value)}
+                  onChange={(event) =>
+                    updateValue("message", event.target.value)
+                  }
                   error={errors.message}
                   placeholder="Tell me what you are building."
                 />
@@ -164,14 +178,18 @@ export function Contact() {
                 {statusMessage ? (
                   <div
                     className={`flex items-center gap-3 rounded-lg border p-4 text-sm font-semibold ${
-                      status === 'success'
-                        ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-200'
-                        : 'border-red-500/30 bg-red-500/10 text-red-700 dark:text-red-200'
+                      status === "success"
+                        ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-200"
+                        : "border-red-500/30 bg-red-500/10 text-red-700 dark:text-red-200"
                     }`}
-                    role={status === 'error' ? 'alert' : 'status'}
+                    role={status === "error" ? "alert" : "status"}
                     aria-live="polite"
                   >
-                    {status === 'success' ? <CheckCircle2 size={18} /> : <XCircle size={18} />}
+                    {status === "success" ? (
+                      <CheckCircle2 size={18} />
+                    ) : (
+                      <XCircle size={18} />
+                    )}
                     {statusMessage}
                   </div>
                 ) : null}

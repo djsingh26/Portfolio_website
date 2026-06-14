@@ -16,19 +16,22 @@ export function Hero() {
       <div className="mx-auto grid w-full max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.04fr_0.96fr] lg:px-8">
         <Reveal>
           <p className="mb-5 inline-flex rounded-full border border-brand-600/20 bg-brand-500/10 px-4 py-2 text-sm font-semibold text-brand-700 dark:border-brand-100/20 dark:text-brand-100">
-            Frontend developer and product-minded builder
+            Salesforce developer and product-minded builder
           </p>
           <h1
             id="hero-heading"
             className="max-w-4xl text-4xl font-bold leading-[1.05] text-ink-950 sm:text-5xl lg:text-6xl dark:text-white"
           >
-            Alex Carter builds fast, accessible interfaces that feel effortless
+            Dilraj Singh builds fast, accessible interfaces that feel effortless
             to use.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-ink-950/70 dark:text-stone-300">
-            I design and ship responsive web experiences with React, TypeScript,
-            and clean component systems that make products easier to understand,
-            maintain, and scale.
+            I design and deliver responsive Salesforce experiences using
+            Lightning Web Components (LWC), TypeScript, and modern JavaScript. I
+            build clean, scalable component architectures that integrate
+            seamlessly with Lightning Experience and Experience Cloud, ensuring
+            solutions are easy to maintain, performant, and fully aligned with
+            core platform capabilities.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
