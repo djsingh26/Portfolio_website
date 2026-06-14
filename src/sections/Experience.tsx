@@ -31,7 +31,6 @@ export function Experience() {
                   <div className="pl-14 md:px-8">
                     <div className="absolute left-0 top-1 flex h-10 w-10 items-center justify-center rounded-lg border border-brand-600/30 bg-white text-brand-700 shadow-soft md:left-1/2 md:-translate-x-1/2 dark:border-brand-100/25 dark:bg-ink-900 dark:text-brand-100">
                       {item.logo ? (
-                        // eslint-disable-next-line @next/next/no-img-element
                         <img
                           src={item.logo}
                           alt={`${item.company} logo`}

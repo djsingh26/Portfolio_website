@@ -3,7 +3,6 @@ import { useState } from "react";
 import { navItems } from "../../data/portfolio";
 import { useActiveSection } from "../../hooks/useActiveSection";
 import { useTheme } from "../../hooks/useTheme";
-import { ProfilePicture } from "../ui/ProfilePicture";
 
 type NavbarProps = {
   sectionIds: string[];

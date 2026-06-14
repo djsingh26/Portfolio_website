@@ -21,7 +21,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-stone-50 text-ink-950 transition-colors duration-300 dark:bg-ink-950 dark:text-stone-50">
       <Navbar sectionIds={sectionIds} />
-      <main>
+      <main id="main" role="main">
         <Hero />
         <About />
         <Projects />
