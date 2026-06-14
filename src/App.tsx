@@ -1,13 +1,21 @@
-import { About } from './sections/About';
-import { Contact } from './sections/Contact';
-import { Experience } from './sections/Experience';
-import { Hero } from './sections/Hero';
-import { Projects } from './sections/Projects';
-import { Footer } from './components/layout/Footer';
-import { Navbar } from './components/layout/Navbar';
-import { BackToTop } from './components/layout/BackToTop';
+import { About } from "./sections/About";
+import { Contact } from "./sections/Contact";
+import { Certifications } from "./sections/Certifications";
+import { Experience } from "./sections/Experience";
+import { Hero } from "./sections/Hero";
+import { Projects } from "./sections/Projects";
+import { Footer } from "./components/layout/Footer";
+import { Navbar } from "./components/layout/Navbar";
+import { BackToTop } from "./components/layout/BackToTop";
 
-const sectionIds = ['home', 'about', 'projects', 'experience', 'contact'];
+const sectionIds = [
+  "home",
+  "about",
+  "projects",
+  "experience",
+  "certifications",
+  "contact",
+];
 
 export default function App() {
   return (
@@ -18,6 +26,7 @@ export default function App() {
         <About />
         <Projects />
         <Experience />
+        <Certifications />
         <Contact />
       </main>
       <Footer />
